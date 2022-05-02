@@ -30,7 +30,7 @@ animations = [ {
 radius = 36.0
 height = 30.0
 
-[node name="Mob" type="RigidBody2D"]
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
 gravity_scale = 0.0
 script = ExtResource( 4 )
 __meta__ = {
@@ -41,6 +41,7 @@ __meta__ = {
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "swim"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
