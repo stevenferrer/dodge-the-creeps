@@ -12,18 +12,21 @@ func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	
+	$DeathSound.play()
 	$HUD.show_game_over()
 
 func new_game():
 	score = 0
-	
-	get_tree().call_group("mobs", "queue_free")
 	
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
 	
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready!")
+	
+	$Music.play()
+	
+	get_tree().call_group("mobs", "queue_free")
 
 
 func _on_MobTimer_timeout():
